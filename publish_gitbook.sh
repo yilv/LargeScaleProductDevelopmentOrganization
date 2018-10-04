@@ -1,27 +1,32 @@
-# install the plugins and build the static site
-gitbook install && gitbook build
+#!/bin/bash
 
-# checkout to the gh-pages branch
-git checkout gh-pages
+# this script refers from https://github.com/steveklabnik/automatically_update_github_pages_with_travis_example
 
-# pull the latest updates
-git pull origin gh-pages --rebase
+set -o errexit -o nounset
 
-# copy the static site files into the current directory.
-cp -R _book/* .
+if [ "$TRAVIS_BRANCH" != "master" ]
+then
+	echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
+	exit 0
+fi
 
-# remove 'node_modules' and '_book' directory
-git clean -fx node_modules
-git clean -fx _book
+rev=$(git rev-parse --short HEAD)
+cd _book
 
-# add all files
-git add .
+git init
+git config user.name "yilv"
+git config user.email "yi.lv@odd-e.com"
 
-# commit
-git commit -a -m "Update docs"
+git remote add upstream "https://$GITHUB_TOKEN@github.com/yilv/LargeScaleProductDevelopmentOrganization.git"
+git fetch upstream
+git reset upstream/gh-pages
 
-# push to the origin
-git push origin gh-pages
+touch .
 
-# checkout to the master branch
-git checkout master
+git add -A .
+git commit -m "rebuild pages at $rev"
+git push -q upstream HEAD:gh-pages
+
+echo "done!"
+
+## - END -
