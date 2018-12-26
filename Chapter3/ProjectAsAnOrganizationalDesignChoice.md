@@ -12,7 +12,7 @@
 
 ![](DevelopmentCost1.jpg)
 
-影响开发成本的因素有很多，其中包含发布成本和浪费，大致上分别对应于Donald Reinertsen在《The Principles of Product Development Flow》书中提到的交易成本和持有成本，实际上多数公司计算的开发成本比书中所说的总体成本范围要小，但不影响我们定性分析的结果。
+影响开发成本的因素有很多，其中包含发布成本和浪费，大致上分别对应于Donald Reinertsen在[《The Principles of Product Development Flow》](https://www.amazon.com/Principles-Product-Development-Flow-Generation/dp/1935401009)书中提到的交易成本和持有成本，实际上多数公司计算的开发成本比书中所说的总体成本范围要小，但不影响我们定性分析的结果。
 
 **回路B1**：批量需求发布以降低成本
 
