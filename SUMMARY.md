@@ -1,6 +1,6 @@
 # Summary
 
-* [前言](README.md)
+* [大规模产品开发组织系统动态](README.md)
 * 第一部分 引言
    * [第一章 产品开发组织](Chapter1/ProductDevelopmentOrganization.md)
    * [第二章 系统思考](Chapter2/SystemsThinking.md)
